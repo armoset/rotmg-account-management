@@ -16,10 +16,6 @@ export class RotmgApiHttpService {
             body: formBody,
             headers: this.headers
         });
-        
-        console.log(formBody);
-
-        console.log(result);
 
         // ToDo: Assumes faulty request get rejected with a wrong http status
         // afaik they always return 200 or 204
@@ -31,9 +27,6 @@ export class RotmgApiHttpService {
         const url = `${this.BASE_URL}/account/verify`;
         const formBody = Helper.toFormBody(data);
     
-        console.log(data);
-        console.log(formBody);
-
         const result = await fetch(url, {
             method: "POST",
             body: formBody,
@@ -53,16 +46,12 @@ export class RotmgApiHttpService {
         }
 
         const formBody = Helper.toFormBody(data);
-    
-        console.log(data);
-        console.log(formBody);
 
         const result = await fetch(url, {
             method: "POST",
             body: formBody,
             headers: this.headers
         });
-        console.log(await result.text());
     }
 
     private readonly headers = {
